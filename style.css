@@ -1,0 +1,134 @@
+/*
+  Oh Hello!
+
+  These are some base styles so that our tutorial looks good.
+
+  Let's go through the important bits real quick
+*/
+:root {
+  --yellow: #ffc600;
+  --black: #272727;
+}
+
+html {
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
+  box-sizing: border-box;
+  /* A system font stack so things load nice and quick! */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 900;
+  font-size: 10px;
+  color: var(--black);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url("./images/topography.svg"),
+    linear-gradient(110deg, #f93d66, #6d47d9);
+  background-size: 340px, auto;
+  min-height: calc(100vh - 100px);
+  margin: 50px;
+  /* background: white; */
+  background-attachment: fixed;
+  letter-spacing: -1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px 0;
+}
+/* Each item in our grid will contain numbers */
+.item {
+  /* We center the contents of these items. You can also do this with flexbox too! */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: var(--yellow); 
+  /* best colour */
+ }
+ 
+.item p {
+  margin: 0 0 5px 0;
+}
+
+/* .container{ */
+  /* display: grid; */
+  /* grid-template-columns: 300px auto 100px auto; */
+  /* grid-template-columns: 100px 420px 600px; */
+  /* grid-template-columns - tells there will be 3 columns of 100px each so total 300px and then it will have automaticaly align the grid box inside this container and its size will be 100px each and automatically asign rows */
+  /* grid-template-rows: 200px 100px auto;  */
+  /* grid-template-columns: 100px 200px;
+  grid-template-rows: 50px 100px; */
+  /* there are 2 rows and 2 columns so all the items will not fit into this and only 4 items will fit which are explicitly defined and al the other items will be extra and will be implicit so we need to define the sizing of it differently with:- */
+  /* grid-auto-rows: 500px 1000px; */
+  /* for implicit rows which are after the item 4  */
+  /* grid-auto-columns: 400px; */
+  /* grid-gap: 20px; */
+  /* grid-template-columns: 400px 200px;
+  grid-auto-flow: column;
+  grid-auto-columns: 200px; */
+  /* implicit created columns */
+  /* grid-template-columns: 200px 200px; */
+  /* Not good coz its also adding the 20px which is the grid gap and that added with the 100% so are getting the horizontal scroll */
+  /* border: 10px solid var(--yellow); */
+  /* grid-template-columns: 200px 400px 1fr; */
+  /* grid-template-columns: 50% 1fr 1fr 1fr; */
+  /* grid-template-columns: auto 1fr 1fr; */
+  /* fr is the fractional unit which takes up all the remaining space left in the container and then use it and if there are 1fr 1fr so they will occupy all the spaces left and split between the two we can also use 2fr which will take 2 twice the space*/
+  /* grid-template-rows: 1fr 10fr 1fr 1fr; */
+  /* grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr); */
+/* } */
+/* .item8 { */
+  /* background: mistyrose; */
+  /* grid-column: span 40; */
+  /* grid-column: span 4;
+  grid-row: span 4; */
+  /* multiple spots 
+     if the span is more than the size of the container then the container will expand and it will create implicit grids to make fit for the content */
+/* } */
+
+/* .item10{ */
+  /* grid-column: span 2; */
+  /* background: #bada55;   */
+  /* grid-column-start: 2;
+  grid-column-end: 5;  */
+  /* shortHand version */
+  /* grid-column: 2 / 6; */
+  /* grid-column: span 4 / 6; */
+  /* grid-column: 5 / 7; */
+  /* grid-column: 1 / -1; */
+  /* -1 is the last grid to span it to the last grid of the container */
+  /* grid-row: 1 / -1; */
+/* } */
+  
+
+/* .container{
+  display: grid;
+  grid-gap: 20px;
+  border: 10px solid var(--yellow);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  /* auto-fill is better to use as the grid can be moved with grid-column-end but with fit it will stick to one place with the other grid it cant be moved to the other place */
+/* }  */
+/* 
+.item4{ 
+  grid-column-end: -1;
+} */
